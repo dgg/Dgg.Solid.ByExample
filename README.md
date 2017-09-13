@@ -1,4 +1,4 @@
-# Dgg.Solid.ByExample
+# S.O.L.I.D by Example
 
 Presentation about S.O.L.I.D principles and code that exemplifies their application via refactoring.
 
