@@ -8,3 +8,8 @@ The network operations team need a quick way to send a log file containing excep
 
 * Network operations team would love to use an API to send files from scripts without using the console application.
 * Besides raw text, the library needs to handle and prettify XML files before sending them.
+
+## Changeset #2
+
+* Network operations team should be able to extract the body of the message from more than XML.
+The list of final supported formats is yet to be determined.
