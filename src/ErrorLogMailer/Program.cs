@@ -1,5 +1,6 @@
 ﻿using System; 
-using System.IO; 
+using System.IO;
+using static System.Console;
 
 namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
@@ -8,11 +9,19 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 		static void Main(string[] args)
 		{
 			string filePath = args[0]; 
- 
-			FileInfo file = new FileInfo(filePath);
-			var sender = new EmailSender();
-			string body = sender.ReadBody(file);
-			sender.SendMail();
+
+			string body = null;
+			try
+			{
+				var sender = new EmailSender();
+				body = sender.ReadBody(new FileInfo(filePath));
+				sender.SendMail();
+			}
+			catch (System.Exception ex)
+			{
+				Error.WriteLine(ex.ToString());
+				Environment.Exit(-1); 
+			}		
 			 
 			writeLine("EMAIL SENT"); 
 			writeLine("body:", body); 
@@ -20,14 +29,14 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
  
 		private static void writeLine(string label, string text = null, ConsoleColor textColor = ConsoleColor.White) 
 		{ 
-			ConsoleColor current = Console.ForegroundColor; 
-			Console.ForegroundColor = textColor; 
-			Console.WriteLine(label); 
-			Console.ForegroundColor = current; 
+			ConsoleColor current = ForegroundColor; 
+			ForegroundColor = textColor; 
+			WriteLine(label); 
+			ForegroundColor = current; 
 			if (!string.IsNullOrWhiteSpace(text)) 
-			{ 
-				Console.Write("\t"); 
-				Console.WriteLine(text); 
+			{
+				Write("\t"); 
+				WriteLine(text); 
 			} 
 		}
 	}
