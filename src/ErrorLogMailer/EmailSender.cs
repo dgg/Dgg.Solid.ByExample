@@ -7,21 +7,24 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
 	public class EmailSender
 	{
-		private readonly FormatReader _reader;
+		private readonly FileReader _reader;
 		public EmailSender()
 		{
-			_reader = new FormatReader();
+			_reader = new FileReader(new FlatFormatReader());
 		}
 
 		private string _body;
-		public string ReadBody(FileInfo file)
+		public string ReadBody(FileInfo file, params IFormatReader[] readers)
 		{
 			if (file == null) throw new ArgumentNullException(nameof(file));
     		if (!file.Exists) throw new FileNotFoundException("File containing the email body does not exist", file.FullName);
 
 			using (StreamReader rdr = file.OpenText()) 
 			{
-				_body = _reader.ReadBody(rdr);
+				_body = _reader
+					.Register(new XmlFormatReader())
+					.RegisterRange(readers)
+					.ReadBody(rdr);
 			}
 			return _body;
 		}
