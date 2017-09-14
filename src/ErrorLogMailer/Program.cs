@@ -19,10 +19,10 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			}
 			catch (System.Exception ex)
 			{
-				Error.WriteLine(ex.ToString());
+				writeLine("ERROR", ex.ToString(), ConsoleColor.Red);
 				Environment.Exit(-1); 
-			}		
-			 
+			}
+			
 			writeLine("EMAIL SENT"); 
 			writeLine("body:", body); 
 		} 

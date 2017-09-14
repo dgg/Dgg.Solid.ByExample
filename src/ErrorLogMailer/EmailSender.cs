@@ -10,6 +10,9 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 		private string _body;
 		public string ReadBody(FileInfo file)
 		{
+			if (file == null) throw new ArgumentNullException(nameof(file));
+    		if (!file.Exists) throw new FileNotFoundException("File containing the email body does not exist", file.FullName);
+
 			using (StreamReader rdr = file.OpenText()) 
 			{
 				_body = rdr.ReadToEnd();
@@ -19,6 +22,8 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 
 		public void SendMail()
 		{
+			if (_body == null) throw new InvalidOperationException("Please load the body before sending the email.");
+
 			using (SmtpClient client = new SmtpClient()) 
 			{
 				var emailMessage = new MimeMessage 
@@ -38,6 +43,8 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 				//client.Send(emailMessage); 
 				client.Disconnect(true); 
 			}
+			// reset the body after sending
+			_body = null;
 		}
 	}    
 }
