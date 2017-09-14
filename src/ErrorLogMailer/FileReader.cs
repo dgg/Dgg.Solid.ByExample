@@ -38,7 +38,12 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			foreach(IFormatReader reader in _readers)
 			{
 				handled = reader.CanHandle(fileContents);
-				if (handled)
+
+				if (handled && reader is DatabaseConnectionReader)
+				{
+					messageBody = "pretend this came from a database. ;-)";
+				}
+				else if (handled)
 				{
 					messageBody = reader.ReadBody(fileContents);
 					break;

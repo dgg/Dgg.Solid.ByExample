@@ -22,7 +22,6 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			using (StreamReader rdr = file.OpenText()) 
 			{
 				_body = _reader
-					.Register(new XmlFormatReader())
 					.RegisterRange(readers)
 					.ReadBody(rdr);
 			}

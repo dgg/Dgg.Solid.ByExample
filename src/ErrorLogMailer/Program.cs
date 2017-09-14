@@ -14,7 +14,9 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			try
 			{
 				var sender = new EmailSender();
-				body = sender.ReadBody(new FileInfo(filePath));
+				body = sender.ReadBody(new FileInfo(filePath), 
+					new XmlFormatReader(),
+					new DatabaseConnectionReader());
 				sender.SendMail();
 			}
 			catch (System.Exception ex)
@@ -22,7 +24,7 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 				writeLine("ERROR", ex.ToString(), ConsoleColor.Red);
 				Environment.Exit(-1); 
 			}
-			
+
 			writeLine("EMAIL SENT"); 
 			writeLine("body:", body); 
 		} 
