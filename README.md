@@ -4,4 +4,4 @@ Presentation about S.O.L.I.D principles and code that exemplifies their applicat
 
 Material is provided in two branches:
 * doc: contains the source for the presentations to be hosted in the repository pages
-* source: contains the source code for the exemplification of the principles
+* src: contains the source code for the exemplification of the principles
