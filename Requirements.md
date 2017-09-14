@@ -13,3 +13,8 @@ The network operations team need a quick way to send a log file containing excep
 
 * Network operations team should be able to extract the body of the message from more than XML.
 The list of final supported formats is yet to be determined.
+
+## Changeset #3
+
+* Network operations cannot make a definite list of file formats
+* Message body can come from a database, instead of the content of a file
