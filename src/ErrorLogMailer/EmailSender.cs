@@ -7,6 +7,12 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
 	public class EmailSender
 	{
+		private readonly FormatReader _reader;
+		public EmailSender()
+		{
+			_reader = new FormatReader();
+		}
+
 		private string _body;
 		public string ReadBody(FileInfo file)
 		{
@@ -15,7 +21,7 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 
 			using (StreamReader rdr = file.OpenText()) 
 			{
-				_body = rdr.ReadToEnd();
+				_body = _reader.ReadBody(rdr);
 			}
 			return _body;
 		}
