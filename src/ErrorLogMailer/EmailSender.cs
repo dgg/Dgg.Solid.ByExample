@@ -7,10 +7,12 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
 	public class EmailSender
 	{
-		private readonly FileReader _reader;
+		private readonly FileReader _fileReader;
+		private readonly DatabaseReader _dbReader;
 		public EmailSender()
 		{
-			_reader = new FileReader(new FlatFormatReader());
+			_fileReader = new FileReader(new FlatFormatReader());
+			_dbReader = new DatabaseReader();
 		}
 
 		private string _body;
@@ -21,10 +23,16 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 
 			using (StreamReader rdr = file.OpenText()) 
 			{
-				_body = _reader
+				_body = _fileReader
 					.RegisterRange(readers)
 					.ReadBody(rdr);
 			}
+			return _body;
+		}
+
+		public string ReadBodyFromDb(FileInfo connectionFile)
+		{
+			_body = _dbReader.ReadBody(connectionFile);
 			return _body;
 		}
 
