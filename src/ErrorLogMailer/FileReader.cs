@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Linq;
 using System.IO;
-using System.Xml; 
-using System.Xml.Linq; 
+
 
 namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
-	class FileReader
+	public class FileReader
 	{
 		private readonly IFormatReader _default;
 		private readonly List<IFormatReader> _readers;
@@ -16,7 +15,7 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			_default = defaultReader;
 			_readers = new List<IFormatReader>();
 		}
-
+		
 		public FileReader Register(IFormatReader reader)
 		{
 			if (reader != null) _readers.Add(reader);
@@ -29,12 +28,13 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			return this;
 		}
 
-		public string ReadBody(StreamReader file)
+		public string ReadBody(FileInfo file)
 		{
 			string messageBody = string.Empty;
 			bool handled = false;
-			
-			string fileContents = file.ReadToEnd();
+
+			string fileContents = file.ReadText();		
+
 			foreach(IFormatReader reader in _readers)
 			{
 				handled = reader.CanHandle(fileContents);

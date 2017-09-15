@@ -4,12 +4,12 @@ using System.Data;
 
 namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
-	class DatabaseReader
+	public class DatabaseReader
 	{
 		public string ReadBody(FileInfo connectionFile)
 		{
 			string body = null;
-			string connectionString = File.ReadAllText(connectionFile.FullName);
+			string connectionString = connectionFile.ReadText();
 			using (var connection = new SqliteConnection(connectionString))
 			{
 				connection.Open();

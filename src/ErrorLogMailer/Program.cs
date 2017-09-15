@@ -18,22 +18,29 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 
 			string body = null;
 			try
-			{
-				var sender = new EmailSender();
+			{				
 				var file = new FileInfo(filePath);
 				if (useDb)
 				{
 					// init data (not needed in real-world scenario)
 					var keepAliveConnection = initDb(File.ReadAllText(filePath));
-					body = sender.ReadBodyFromDb(file);
+					
+					var reader = new DatabaseReader();
+					body = reader.ReadBody(file);
+
+					// silly workaround for the memory not to go away
 					keepAliveConnection.Close();
 					keepAliveConnection.Dispose();
 				}
 				else
 				{
-					body = sender.ReadBody(file, new XmlFormatReader());
+					var reader = new FileReader(new FlatFormatReader())
+						.Register(new XmlFormatReader());
+					body = reader.ReadBody(file);
 				}
-				sender.SendMail();
+
+				var sender = new EmailSender();
+				sender.SendMail(body);
 			}
 			catch (System.Exception ex)
 			{
