@@ -16,40 +16,39 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			bool useDb = args.Length > 1 && 
 				args[1].Equals("-db", StringComparison.OrdinalIgnoreCase);
 
-			string body = null;
+			// init data (not needed in real-world scenario)
+			var keepAliveConnection = initDb(useDb, File.ReadAllText(filePath));
+
+			var file = new FileInfo(filePath);
+			IEmailSender sender = new EmailSender();
+
+			IMessageInfoRetriever retriever = useDb ?
+				new DatabaseReader(file) as IMessageInfoRetriever:
+				new FileReader(file, new FlatFormatReader())
+					.Register(new XmlFormatReader());
+
+			process(sender, retriever);
+
+			// silly workaround for the memory db not to go away
+			keepAliveConnection?.Close();
+			keepAliveConnection?.Dispose();	
+		}
+
+		private static void process(IEmailSender sender, IMessageInfoRetriever retriever)
+		{
 			try
-			{				
-				var file = new FileInfo(filePath);
-				if (useDb)
-				{
-					// init data (not needed in real-world scenario)
-					var keepAliveConnection = initDb(File.ReadAllText(filePath));
-					
-					var reader = new DatabaseReader();
-					body = reader.ReadBody(file);
+			{
+				var processor = new LogProcessor(sender, retriever);
+				string body = processor.Process();
 
-					// silly workaround for the memory not to go away
-					keepAliveConnection.Close();
-					keepAliveConnection.Dispose();
-				}
-				else
-				{
-					var reader = new FileReader(new FlatFormatReader())
-						.Register(new XmlFormatReader());
-					body = reader.ReadBody(file);
-				}
-
-				var sender = new EmailSender();
-				sender.SendMail(body);
+				writeLine("EMAIL SENT"); 
+				writeLine("body:", body);
 			}
 			catch (System.Exception ex)
 			{
 				writeLine("ERROR", ex.ToString(), ConsoleColor.Red);
 				Environment.Exit(-1); 
 			}
-
-			writeLine("EMAIL SENT"); 
-			writeLine("body:", body);
 		}
  
 		private static void writeLine(string label, string text = null, ConsoleColor textColor = ConsoleColor.White) 
@@ -65,8 +64,9 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			} 
 		}
 
-		private static IDbConnection initDb(string connectionString)
+		private static IDbConnection initDb(bool useDb, string connectionString)
 		{
+			if (!useDb) return null;
 			var connection = new SqliteConnection(connectionString);
 			connection.Open();
 			using (var command = connection.CreateCommand())

@@ -6,16 +6,18 @@ using System.IO;
 
 namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
-	public class FileReader
+	public class FileReader : IMessageInfoRetriever
 	{
 		private readonly IFormatReader _default;
 		private readonly List<IFormatReader> _readers;
-		public FileReader(IFormatReader defaultReader)
+		private readonly FileInfo _file;
+		public FileReader(FileInfo file, IFormatReader defaultReader)
 		{
+			_file = file;
 			_default = defaultReader;
 			_readers = new List<IFormatReader>();
 		}
-		
+
 		public FileReader Register(IFormatReader reader)
 		{
 			if (reader != null) _readers.Add(reader);
@@ -28,29 +30,42 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 			return this;
 		}
 
-		public string ReadBody(FileInfo file)
+		public string GetMessageBody()
 		{
-			string messageBody = string.Empty;
+			string fileContents = _file.ReadText();
+			string messageBody = parseBody(fileContents);
+			return messageBody;
+		}
+
+		private string parseBody(string fileContents)
+		{
 			bool handled = false;
-
-			string fileContents = file.ReadText();		
-
+			string body= null;
 			foreach(IFormatReader reader in _readers)
 			{
-				handled = reader.CanHandle(fileContents);
-				if (handled)
-				{
-					messageBody = reader.ReadBody(fileContents);
-					break;
-				}
-			}
-			
-			if (!handled)
-			{
-				messageBody = _default.ReadBody(fileContents);
+				handled = tryRead(reader, fileContents, out body);
+				if (handled) break;
 			}
 
-			return messageBody;
+			if (!handled)
+			{
+				body = _default.ReadBody(fileContents);
+			}
+			
+			return body;
+		}
+
+		private bool tryRead(IFormatReader reader, string fileContents, out string body)
+		{
+			bool handled = false;
+			body = null;
+
+			handled = reader.CanHandle(fileContents);
+			if (handled)
+			{
+				body = reader.ReadBody(fileContents);
+			}
+			return handled;
 		}
 	}
 }

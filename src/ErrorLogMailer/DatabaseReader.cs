@@ -4,13 +4,18 @@ using System.Data;
 
 namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
-	public class DatabaseReader
+	public class DatabaseReader : IMessageInfoRetriever
 	{
-		public string ReadBody(FileInfo connectionFile)
+		private readonly string _connectionString;
+		public DatabaseReader(FileInfo connectionFile)
+		{
+			_connectionString = connectionFile.ReadText();
+		}
+
+		public string GetMessageBody()
 		{
 			string body = null;
-			string connectionString = connectionFile.ReadText();
-			using (var connection = new SqliteConnection(connectionString))
+			using (var connection = new SqliteConnection(_connectionString))
 			{
 				connection.Open();
 
@@ -23,7 +28,7 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 				}
 				connection.Close();
 			}	
-			return body;			
+			return body;
 		}
 	}
 }

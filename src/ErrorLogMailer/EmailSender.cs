@@ -5,7 +5,7 @@ using MimeKit;
 
 namespace Dgg.Solid.ByExample.ErrorLogMailer
 {
-	public class EmailSender
+	public class EmailSender : IEmailSender
 	{
 		public void SendMail(string body)
 		{
@@ -31,5 +31,5 @@ namespace Dgg.Solid.ByExample.ErrorLogMailer
 				client.Disconnect(true); 
 			}
 		}
-	}    
+	}
 }
