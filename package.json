@@ -1,0 +1,26 @@
+{
+  "name": "dgg.solid.by-example",
+  "version": "1.0.0",
+  "description": "presentations about \"Designing Object-Oriented Software using SOLID Principles\" and supporting material for \"SOLID by Example\"",
+  "main": "index.html",
+  "scripts": {
+    "start": "sh ws.sh -b -p 8081 --no-list-directory -w \"**/**.{html,css,js,md}\" &"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgg/Dgg.Solid.ByExample.git"
+  },
+  "keywords": [
+    "SOLID",
+    "design"
+  ],
+  "author": "Daniel González García",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgg/Dgg.Solid.ByExample/issues"
+  },
+  "homepage": "https://github.com/dgg/Dgg.Solid.ByExample#readme",
+  "devDependencies": {
+    "simple-autoreload-server": "^0.2.7"
+  }
+}
