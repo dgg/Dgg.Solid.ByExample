@@ -4,7 +4,7 @@
   "description": "presentations about \"Designing Object-Oriented Software using SOLID Principles\" and supporting material for \"SOLID by Example\"",
   "main": "index.html",
   "scripts": {
-    "start": "sh ws.sh -b -p 8081 --no-list-directory -w \"**/**.{html,css,js,md}\" &"
+    "start": "sh ws.sh -b -w \"**/**.{html,css,js,md}\""
   },
   "repository": {
     "type": "git",
