@@ -71,6 +71,7 @@
 
 					<section>
 						<h3>Cohesion</h3>
+						<section>Measure of how strong the responsibilities of an element are</section>
 						<section>
 							<p class="fragment fade-right"><strong>High</strong></p>
 							<p class="fragment fade-down">
@@ -96,6 +97,38 @@
 							</p>
 						</section>
 					</section>
+
+					<section>
+							<h3>Coupling</h3>
+							<section>
+								<p>Measure of how a component (class/package) depends on other components</p>
+								<p class="fragment">not avoided ad-infinitum; managed, instead</p>
+							</section>
+							<section>
+								<p class="fragment fade-right"><strong>Low</strong> loose, weak</p>
+								<p class="fragment fade-down">
+									Interaction between a limited number of components
+								</p>
+								<p class="fragment fade-down">
+									Changes in loosely coupled components do not propagate
+								</p>
+								<p class="fragment fade-down">
+									Fosters reuse. Watch unnecessary complexity
+								</p>
+							</section>
+							<section>
+								<p class="fragment fade-left"><strong>High</strong> tight, strong</p>
+								<p class="fragment fade-down">
+									Interactions are spread all over the place
+								</p>
+								<p class="fragment fade-down">
+									Changes in "remote" places propagate themselves 
+								</p>
+								<p class="fragment fade-down">
+									Elements are difficult to understand in isolation
+								</p>
+							</section>
+						</section>
 				</div>
 			</div>
 			<script src="lib/js/head.min.js"></script>
