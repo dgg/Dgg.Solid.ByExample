@@ -313,3 +313,22 @@ body {
 
 .reveal small code {
   vertical-align: baseline; }
+
+
+  .svg-icon {
+	display: inline-flex;
+	align-self: center;
+	position: relative;
+	height: 1em;
+	width: 1em;
+  }
+  
+  .svg-icon svg {
+	height:1em;
+	width:1em;
+  }
+  
+  .svg-icon.svg-baseline svg {
+	bottom: -0.125em;
+	position: absolute;
+  }
