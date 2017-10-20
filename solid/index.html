@@ -154,6 +154,31 @@
 						<div><img width="450" class="plain" src="img/download-arrow.svg" /></div>
 						<div>High Cohesion</div>
 					</section>
+
+					<section>
+						<h3>Law of Demeter</h3>
+						<section>Do not talk to strangers</section>
+						<section>
+							<ul>
+								<h4>Within a method</h4>
+								<li class="fragment">container object</li>
+								<li class="fragment">a parameter</li>
+								<li class="fragment">a member variable/property</li>
+								<li class="fragment">objects created within</li>
+							</ul>
+						</section>
+						<section>
+							<div>Violation of LOD</div>
+							<div><img width="250" class="plain" src="img/download-arrow.svg" /></div>
+							<div>
+								<ul>
+									<li class="fragment">encapsulation broken</li>
+									<li class="fragment">coupling increased</li>
+									<li class="fragment">cohesion lowered</li>
+								</ul>
+							</div>
+						</section>
+					</section>
 				</div>
 			</div>
 			<script src="lib/js/head.min.js"></script>
