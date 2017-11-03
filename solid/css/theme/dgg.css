@@ -177,6 +177,102 @@ body {
 	left: -18px;
 }
 
+.reveal .lsp .first-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 500%;
+}
+
+.reveal .lsp .first-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: 214px;
+}
+
+.reveal .lsp .second-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 300%;
+	top: -162px;
+	left: -34px;
+}
+
+.reveal .lsp .second-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: -66px;
+	left: -23px;
+}
+.reveal .lsp .third-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 250%;
+	top: -252px;
+	left: -30px;
+}
+
+.reveal .lsp .third-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 70%;
+	top: -158px;
+	left: -38px;
+}
+
+.reveal .isp .first-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 500%;
+}
+
+.reveal .isp .first-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: 214px;
+}
+
+.reveal .isp .second-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 300%;
+	top: -162px;
+	left: -34px;
+}
+
+.reveal .isp .second-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: -66px;
+	left: -23px;
+}
+.reveal .isp .third-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 250%;
+	top: -252px;
+	left: -66px;
+}
+
+.reveal .isp .third-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 70%;
+	top: -158px;
+	left: -72px;
+}
+
 /*********************************************
  * OTHER
  *********************************************/
