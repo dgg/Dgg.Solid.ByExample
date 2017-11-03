@@ -89,8 +89,20 @@ body {
 	vertical-align: top;
 }
 
-.reveal .srp .first-letter {
+.reveal .first-letter {
 	font-size: 500%;
+}
+
+.reveal .second-letter {
+	font-size: 300%;
+}
+
+.reveal .third-letter {
+	font-size: 250%;
+}
+
+.reveal .third-word {
+	font-size: 70%;
 }
 
 .reveal .srp .first-word {
@@ -98,7 +110,6 @@ body {
 }
 
 .reveal .srp .second-letter {
-	font-size: 300%;
 	top: -162px;
 }
 
@@ -106,19 +117,13 @@ body {
 	top: -53px;
 }
 .reveal .srp .third-letter {
-	font-size: 250%;
 	top: -244px;
 	left: 20px;
 }
 
 .reveal .srp .third-word {
-	font-size: 70%;
 	top: -142px;
 	left: 6px;
-}
-
-.reveal .ocp .first-letter {
-	font-size: 500%;
 }
 
 .reveal .ocp .first-word {
@@ -126,7 +131,6 @@ body {
 }
 
 .reveal .ocp .second-letter {
-	font-size: 300%;
 	top: -162px;
 	left: -120px;
 }
@@ -136,19 +140,13 @@ body {
 	left: -120px;
 }
 .reveal .ocp .third-letter {
-	font-size: 250%;
 	top: -252px;
 	left: -14px;
 }
 
 .reveal .ocp .third-word {
-	font-size: 70%;
 	top: -158px;
 	left: -18px;
-}
-
-.reveal .lsp .first-letter {
-	font-size: 500%;
 }
 
 .reveal .lsp .first-word {
@@ -156,7 +154,6 @@ body {
 }
 
 .reveal .lsp .second-letter {
-	font-size: 300%;
 	top: -162px;
 	left: -34px;
 }
@@ -166,19 +163,13 @@ body {
 	left: -23px;
 }
 .reveal .lsp .third-letter {
-	font-size: 250%;
 	top: -252px;
 	left: -30px;
 }
 
 .reveal .lsp .third-word {
-	font-size: 70%;
 	top: -158px;
 	left: -38px;
-}
-
-.reveal .isp .first-letter {
-	font-size: 500%;
 }
 
 .reveal .isp .first-word {
@@ -186,7 +177,6 @@ body {
 }
 
 .reveal .isp .second-letter {
-	font-size: 300%;
 	top: -162px;
 	left: -34px;
 }
@@ -196,19 +186,13 @@ body {
 	left: -23px;
 }
 .reveal .isp .third-letter {
-	font-size: 250%;
 	top: -252px;
 	left: -66px;
 }
 
 .reveal .isp .third-word {
-	font-size: 70%;
 	top: -158px;
 	left: -72px;
-}
-
-.reveal .dip .first-letter {
-	font-size: 500%;
 }
 
 .reveal .dip .first-word {
@@ -216,7 +200,6 @@ body {
 }
 
 .reveal .dip .second-letter {
-	font-size: 300%;
 	top: -140px;
 	left: 72px;
 }
@@ -226,13 +209,11 @@ body {
 	left: 74px;
 }
 .reveal .dip .third-letter {
-	font-size: 250%;
 	top: -252px;
 	left: -74px;
 }
 
 .reveal .dip .third-word {
-	font-size: 70%;
 	top: -153px;
 	left: -88px;
 }
