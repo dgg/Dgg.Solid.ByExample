@@ -83,6 +83,100 @@ body {
 	text-shadow: 2px 2px 2px #222;
 }
 
+.reveal .srp .first-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 500%;
+}
+
+.reveal .srp .first-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: 214px;
+}
+
+.reveal .srp .second-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 300%;
+	top: -162px;
+}
+
+.reveal .srp .second-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: -53px;
+}
+.reveal .srp .third-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 250%;
+	top: -244px;
+	left: 20px;
+}
+
+.reveal .srp .third-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 70%;
+	top: -142px;
+	left: 6px;
+}
+
+.reveal .ocp .first-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 500%;
+}
+
+.reveal .ocp .first-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: 214px;
+}
+
+.reveal .ocp .second-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 300%;
+	top: -162px;
+	left: -120px;
+}
+
+.reveal .ocp .second-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	top: -66px;
+	left: -120px;
+}
+.reveal .ocp .third-letter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 250%;
+	top: -252px;
+	left: -14px;
+}
+
+.reveal .ocp .third-word {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 70%;
+	top: -158px;
+	left: -18px;
+}
+
 /*********************************************
  * OTHER
  *********************************************/
