@@ -1,5 +1,5 @@
 <h3>Cohesion</h3>
-<section>Measure of how strong the responsibilities of an element re</section>
+<section>Measure of how strong the responsibilities of an element are</section>
 <section>
 	<p<strong>High</strong></p>
 	<p class="fragment fade-right">
@@ -15,7 +15,7 @@
 <section>
 	<p><strong>Low</strong></p>
 	<p class="fragment fade-left">
-		Responsibilities are many and/or not so related to each ther  
+		Responsibilities are many and/or not so related to each other
 	</p>
 	<p class="fragment fade-left">
 		Some methods work with different state
