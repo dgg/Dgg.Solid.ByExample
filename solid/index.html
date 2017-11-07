@@ -216,22 +216,7 @@
 						</h3>
 					</section>
 
-					<section>
-						<p>a class should only have only one reason to change</p>
-					</section>
-
-					<section>
-						<div>as few responsibilities as possible</div>
-						<div><img width="150" class="plain" src="img/download-arrow.svg" /></div>
-						<div>resiliency to changes</div>
-					</section>
-
-					<section>
-						<div>honoring principle</div>
-						<div><img width="150" class="plain" src="img/download-arrow.svg" /></div>
-						<div>increases cohesion</div>
-						<div>lowers coupling</div>
-					</section>
+					<section data-markdown="srp.md"></section>
 
 					<section data-transition="zoom-in">
 						<h3 class="ocp">
@@ -241,22 +226,7 @@
 						</h3>
 					</section>
 
-					<section>
-						<p>software entities should be <em>Open</em> for extension but <em>Closed</em> for modification</p>
-					</section>
-
-					<section>
-						<p>when features change</p>
-						<p><strong>Do</strong> add new functionality</p>
-						<p><strong>Instead of</strong> change existing ones</p>
-						<p class="fragment">
-							no change === no break
-						</p>
-						<div class="fragment">
-							<img width="150" class="plain" src="img/like.svg" /><br/>
-							polymorphism + abstractions
-						</div>
-					</section>
+					<section data-markdown="ocp.md"></section>
 
 					<section data-transition="zoom-in">
 						<h3 class="lsp">
@@ -266,25 +236,7 @@
 						</h3>
 					</section>
 
-					<section>
-						<p>
-							If for each object <em>o1</em> of type <em><strong>S</strong></em> there is an
-							object <em>o2</em> of type <em><strong>T</strong></em> such that for all
-							programs <strong>P</strong> defined in terms of <em><strong>T</strong></em>,
-							the behavior of <strong>P</strong> is unchanged when <em>o1</em> is substituted
-							for <em>o2</em> then <em><strong>S</strong></em> is a subtype of <em><strong>T</strong></em>
-						</p>
-					</section>
-
-					<section>
-						<p>derivatives must be sustitutives for their base types</p>
-						<p>Subclasses must live up to the expectations set for their parents</p>
-					</section>
-
-					<section data-background-image="img/bad-idea.jpg">
-						<p>downcasting</p>
-						<p><code>NotImplementedException</code></p>
-					</section>
+					<section data-markdown="lsp.md"></section>
 
 					<section data-transition="zoom-in">
 						<h3 class="isp">
