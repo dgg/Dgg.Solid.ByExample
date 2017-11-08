@@ -6,5 +6,5 @@ the behavior of **P** is unchanged when _o1_ is substituted
 for _o2_ then _**S**_ is a subtype of _**T**_”</blockquote></section>
 <section>
 	<p class="dark">Barbara Liskov</p>
-	<img alt="Galileo" class="plain" src="img/Liskov.jpg"/>
+	<img alt="Barbara Liskov" class="plain" src="img/Liskov.jpg"/>
 </section>
