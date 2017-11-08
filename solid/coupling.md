@@ -1,6 +1,6 @@
 <h3>Coupling</h3>
 <section>
-	<p>Measure of how a component (class/package) depends on other omponents</p>
+	<p>Measure of how a component (class/package) depends on other components</p>
 	<p class="fragment">not avoided ad-infinitum; managed, instead</p>
 </section>
 <section>
