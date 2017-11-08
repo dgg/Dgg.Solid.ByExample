@@ -2,8 +2,8 @@
 
 <section>
 
-Changes break unrelated code
+<p>Changes break unrelated code</p>
 
-Fragile code is an usual guest of the bug list
+<p>Fragile code is an usual guest of the bug list</p>
 
 </section>

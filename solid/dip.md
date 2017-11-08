@@ -6,7 +6,7 @@ tackles rigidity
 
 degradation is often due to poor management of dependencies
 
-change of direction of dependencies comes natural in proper bject-oriented code
+change of direction of dependencies comes natural in proper object-oriented code
 
 ---
 
